@@ -13,3 +13,17 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+
+require('dotenv').config();
+
+
+const config = {
+  apiKey: process.env.API_KEY,
+  serverSecret: process.env.SERVER_SECRET,
+  isKalvian: process.env.IS_KALVIAN === 'true',
+};
+
+
+module.exports = config;
+
